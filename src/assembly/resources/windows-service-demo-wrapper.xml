@@ -1,0 +1,7 @@
+<service>
+    <id>windows-service-demo</id>
+    <name>Windows Service Demo</name>
+    <description>Demo Spring Boot Windows service</description>
+    <executable>java</executable>
+    <arguments>-Dspring.config.location=file:C:/config/bootapplication.properties  -jar C:\Users\tiyakubu\Documents\NetBeansProjects\springboot\target\springboot-0.0.1-SNAPSHOT.jar</arguments>
+</service>

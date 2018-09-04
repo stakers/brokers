@@ -1,0 +1,13 @@
+package brokers.model.core;
+
+/**
+ * Routes request from the customer app to the respective back-office solution.
+ */
+public class BrokerRequestRelay {
+
+	public void route() {
+		// TODO - implement BrokerRequestRelay.route
+		throw new UnsupportedOperationException();
+	}
+
+}

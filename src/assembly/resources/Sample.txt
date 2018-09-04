@@ -1,0 +1,9 @@
+MS DOS
+
+First modify the windows-service-demo-wrapper.xml file in C:\Users\tiyakubu\Documents\NetBeansProjects\springboot\src\assembly\resources
+
+windows-service-demo install
+1
+windows-service-demo install
+
+windows-service-demo uninstal
