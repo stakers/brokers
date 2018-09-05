@@ -1,7 +1,7 @@
-package brokers.service;
-  
-
-public interface AdminService { 
-	
-	 
-}
+//package brokers.service;
+//
+//
+//public interface AdminService {
+//
+//
+//}

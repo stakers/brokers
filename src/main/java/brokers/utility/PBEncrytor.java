@@ -14,18 +14,18 @@ package brokers.utility;
  * @version 1.0
  */
 
-import java.security.InvalidKeyException;
-import javax.crypto.NoSuchPaddingException;
-import java.security.NoSuchAlgorithmException;
-import java.security.InvalidAlgorithmParameterException;
-import javax.crypto.SecretKey;
-import java.security.spec.KeySpec;
-import java.security.spec.AlgorithmParameterSpec;
-import javax.crypto.spec.PBEParameterSpec;
-import javax.crypto.spec.PBEKeySpec;
-import javax.crypto.SecretKeyFactory;
 import javax.crypto.Cipher;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.PBEKeySpec;
+import javax.crypto.spec.PBEParameterSpec;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.AlgorithmParameterSpec;
 import java.security.spec.InvalidKeySpecException;
+import java.security.spec.KeySpec;
 
 public class PBEncrytor {
     String passPhrase0 = "***MyRedeemerLives7";
@@ -44,7 +44,7 @@ public class PBEncrytor {
     
     
     public static void main(String[] args) {
-        PBEncrytor Pb = new PBEncrytor ();
+        PBEncrytor Pb = new PBEncrytor();
      // String dddd=  Pb.PBEncrypt("SFFSF","***MyRedeemerLives007");
    String dddd=  Pb.PBEncrypt("DIESEL_MON","***MyRedeemerLives7");
    String defizer=Pb.PBDecrypt("i1wbB7KZ8Hd4+kIYs7UuTw==","***MyRedeemerLives7");

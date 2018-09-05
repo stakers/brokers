@@ -1,14 +1,18 @@
 package brokers.utility;
 
-import javax.net.ssl.*;
-import java.security.*;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
 import java.security.cert.X509Certificate;
 
 public final class SSLUtil{
 
     private static final TrustManager[] UNQUESTIONING_TRUST_MANAGER = new TrustManager[]{
             new X509TrustManager() {
-                public java.security.cert.X509Certificate[] getAcceptedIssuers(){
+                public X509Certificate[] getAcceptedIssuers(){
                     return null;
                 }
                 public void checkClientTrusted( X509Certificate[] certs, String authType ){}

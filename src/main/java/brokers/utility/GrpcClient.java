@@ -1,10 +1,9 @@
 package brokers.utility;
 
-import java.util.concurrent.TimeUnit;
- 
-
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+
+import java.util.concurrent.TimeUnit;
 
 public class GrpcClient {
     public static void main(String[] args) throws InterruptedException {

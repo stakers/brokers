@@ -1,37 +1,23 @@
 package brokers.utility;
 
-import java.math.BigDecimal;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.UUID;
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-
+import brokers.model.Response;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.ApplicationContext;
-import org.springframework.core.env.Environment;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 
-import com.ecobank.esc.dom.DocumentManagerFactory;
-import com.ecobank.esc.model.SaveDocResponse;
-import com.ecobank.esc.util.DocManagerSettings;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import brokers.model.Response;
-import brokers.model.RestResponse;
-
-import java.net.*;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Marshaller;
+import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.io.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.UUID;
 
 public class BasicUtil {
 
@@ -115,7 +101,7 @@ public class BasicUtil {
 		}
 	}
 	
-	public static <T> Response marshalObj(Object obj, String logFileLocation, String requestType, Class<T> objectClass){ 
+	public static <T> Response marshalObj(Object obj, String logFileLocation, String requestType, Class<T> objectClass){
 		PrintWriter out = null;
 		try { 
 			
@@ -125,7 +111,7 @@ public class BasicUtil {
 			File file = new File(logFileLocation+"-"+(new SimpleDateFormat("dd-MMM-YYYY").format(new Date()))+".json");
 			out = new PrintWriter(new FileWriter(file, true));
 			mapper.writeValue(out, obj);
-			return new Response("00", "Success."); 
+			return new Response("00", "Success.");
 			
 			case "xml" :
 				JAXBContext jContext = JAXBContext.newInstance(objectClass);
@@ -134,7 +120,7 @@ public class BasicUtil {
 				File xmlFile = new File(logFileLocation+"-"+(new SimpleDateFormat("dd-MMM-YYYY").format(new Date()))+".xml");
 				out = new PrintWriter(new FileWriter(xmlFile, true));
 				marshallObj.marshal(obj, out);  
-				return new Response("00", "Success."); 
+				return new Response("00", "Success.");
 			}
 
 		} catch (Exception e) {

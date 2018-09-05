@@ -4,16 +4,16 @@
  */
 package brokers.model;
 
-import java.io.Serializable;
-
-/**
- *
- * @author tiyakubu
- */
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.wordnik.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiModelProperty;
+
+import java.io.Serializable;
 import java.util.List;
+
+/**
+ * @author tiyakubu
+ */
 
 /**
  *
