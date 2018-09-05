@@ -5,6 +5,7 @@ import brokers.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -18,7 +19,7 @@ public class TestController {
         return userService.fetchUser();
     }
     @PostMapping("/saveuser")
-    public User saveUser(@RequestBody User user){
+    public User saveUser(@RequestBody @Valid User user){
         return userService.save(user);
     }
 }
